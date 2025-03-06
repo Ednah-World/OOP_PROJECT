@@ -6,7 +6,7 @@ public class instructor extends Person {
     //Constructor to initialize instructor details
     public instructor (String name, String email, int staff_id) {
         super(name, email);
-        this.staff_id;
+        this.staff_id = staff_id;
     }
 
     //override the display details method
