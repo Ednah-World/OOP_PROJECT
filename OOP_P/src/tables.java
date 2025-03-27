@@ -4,8 +4,8 @@ import java.sql.Statement;
 public class tables {
     public static void main(String [] args) {
         Statement state;
-        ConnectDB db = new ConnectDB();
-        Connection conn = db.connectToDatabase("oop_project", "postgres", "Murungii");
+        connectdb db = new connectdb();
+        Connection conn = db.conn("OOP_Projct", "postgres", "Wanjiru1806");
         try {
             String query= "Create table Courses (course_id VARCHAR(20) primary key, course_name VARCHAR(20), credits VARCHAR(20), instructor VARCHAR(20))";
             state= conn.createStatement();
