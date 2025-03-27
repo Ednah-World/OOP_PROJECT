@@ -21,7 +21,7 @@ public class Main {
         }
 
         try {
-            String query= "insert into Student (student_id, student_name, email) values ('5001', 'Bing Bong', 'boing@gmail.com')";
+            String query= "insert into Student (student_id, student_name, email, phone_number, password) values ('5001', 'Bing Bong', 'boing@gmail.com','0771209193','chinkololo%')";
             state= conn.createStatement();
             state.executeUpdate(query);
             System.out.println("Value inserted successfully");
@@ -39,7 +39,7 @@ public class Main {
         }
 
         try {
-            String query = "insert into staff (staff_id, department) values ('S001', 'Mathematics')";
+            String query = "insert into staff (staff_id, department,phone_number,password) values ('S001', 'Mathematics','0727308900','kairetu27*')";
             state= conn.createStatement();
             state.executeUpdate(query);
             System.out.println("Value inserted successfully");
@@ -47,5 +47,12 @@ public class Main {
             e.printStackTrace();
         }
 
-        }
+        Scanner scanner= new Scanner(System.in);
+        System.out.print("Please enter course name: ");
+        String course_name= scanner.nextLine();
+
+        Mainframe myFrame = new Mainframe();
+        myFrame.init();
+
     }
+}

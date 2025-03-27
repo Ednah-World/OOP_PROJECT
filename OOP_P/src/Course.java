@@ -1,8 +1,8 @@
 public class Course {
-    public String course_id;
-    public String course_name;
-    public int credits;
-    public String instructor;
+    public static String course_id;
+    public static String course_name;
+    public static int credits;
+    public static String instructor;
 
     public Course (){
         this.course_id = course_id;
