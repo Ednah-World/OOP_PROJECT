@@ -1,10 +1,10 @@
 public class Course {
-    private String course_id;
-    private String course_name;
-    private int credits;
-    private String instructor;
+    public static String course_id;
+    public static String course_name;
+    public static int credits;
+    public static String instructor;
 
-    public Course (String course_id,String course_name,int credits, String instructor){
+    public Course (){
         this.course_id = course_id;
         this.course_name = course_name;
         this.credits = credits;

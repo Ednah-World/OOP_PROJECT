@@ -15,7 +15,7 @@ public class tables {
             e.printStackTrace();
         }
         try {
-            String query= "Create table Student (student_id VARCHAR(20) primary key, student_name VARCHAR(20), email VARCHAR(20))";
+            String query= "Create table Student (student_id VARCHAR(20) primary key, student_name VARCHAR(20), email VARCHAR(20), phone_number VARCHAR(20), password VARCHAR(20))";
             state= conn.createStatement();
             state.executeUpdate(query);
             System.out.println("Finished");
@@ -31,7 +31,7 @@ public class tables {
             e.printStackTrace();
         }
         try {
-            String query = "Create table Staff (staff_id VARCHAR(20) primary key, department VARCHAR(20))";
+            String query = "Create table Staff (staff_id VARCHAR(20) primary key, department VARCHAR(20), phone_number VARCHAR(20), password VARCHAR(20))";
             state = conn.createStatement();
             state.executeUpdate(query);
             System.out.println("Finished");
