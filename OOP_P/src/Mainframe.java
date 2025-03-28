@@ -43,11 +43,11 @@ import java.sql.*;
                 button.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        String courseName = textField.getText();
-                        String courseID = textField.getText();
-                        String credits = textField.getText();
-                        String instructor = textField.getText();
-                        JOptionPane.showMessageDialog(null, "Course Added: " + courseName);
+                        String course_id = idtextField.getText();
+                        String course_name = textField.getText();
+                        String credits = crtextField.getText();
+                        String instructor = insttextField.getText();
+                        JOptionPane.showMessageDialog(null, "Course Added: " + course_name);
                     }
                 });
 
@@ -55,7 +55,7 @@ import java.sql.*;
             }
 
             private void insertIntoCourses(String course_id,String course_name, String credits, String instructor) {
-                String url = "jdbc:mysql://localhost:3306/OOP_Projct"; // Change to your database
+                String url = "jdbc:mysql://localhost:5432/OOP_Projct"; // Change to your database
                 String user = "postgres"; // Change to your MySQL username
                 String password = "Wanjiru1806"; // Change to your MySQL password
 

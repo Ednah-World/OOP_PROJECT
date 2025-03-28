@@ -9,7 +9,7 @@ public class Main {
         Scanner sc= new Scanner(System.in);
         Statement state;
         connectdb db= new connectdb();
-        Connection conn=db.conn("test","postgres","100100");
+        Connection conn=db.conn("OOP_Projct","postgres","Wanjiru1806");
 
         try {
             String query = "insert into courses (course_id, course_name, credits, instructor) values ('001', 'BComm', '4','Prof. Wafula')";
@@ -47,12 +47,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        Scanner scanner= new Scanner(System.in);
-        System.out.print("Please enter course name: ");
-        String course_name= scanner.nextLine();
-
-        Mainframe myFrame = new Mainframe();
-        myFrame.init();
 
     }
 }
