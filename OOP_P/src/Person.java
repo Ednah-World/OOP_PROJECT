@@ -2,13 +2,13 @@ public abstract class Person {
 
     private String name;
     private String email;
-    private int PhoneNumber;
+
 
     //Constructor to initialize name and email
-    public Person(String name, String email, int PhoneNumber) {
+    public Person(String name, String email) {
         this.name = name;
         this.email = email;
-        this.PhoneNumber = PhoneNumber;
+
     }
 
 

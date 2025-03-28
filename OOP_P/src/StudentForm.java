@@ -39,7 +39,7 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent e) {
                     String name = nameTextField.getText();
                     String email = emailTextField.getText();
-                    String PhoneNumber = pnTextField.getText();
+                    int PhoneNumber = Integer.parseInt(pnTextField.getText());
 
                     if (name.isEmpty() || email.isEmpty() || PhoneNumber.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "All fields must be filled!", "Error", JOptionPane.ERROR_MESSAGE);

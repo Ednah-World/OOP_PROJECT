@@ -9,13 +9,10 @@ public class Student extends Person{
     private String password;
 
     public Student(String name, String email, String student_id, int PhoneNumber){
-        super();
+        super(name, email, PhoneNumber);
         this.student_id = Integer.parseInt(student_id);
     }
 
-    public Student(String name, String email, String phoneNumber) {
-        super();
-    }
 
     public int getStudentId() {
         return student_id;
