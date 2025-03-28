@@ -12,8 +12,7 @@ public class en_roll_ment extends JFrame {
         setTitle("Enroll");
         setSize(500, 450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());// Set layout for components
-        Course course= new Course();
+        setLayout(new GridLayout(5, 2, 5, 5));
 
         // Creating UI Components
         JLabel label = new JLabel("Enrollment ID:");
@@ -51,6 +50,12 @@ public class en_roll_ment extends JFrame {
                 String course_id = cidtextField.getText();
                 String grade = grtextField.getText();
                 JOptionPane.showMessageDialog(null, "Course Added: " + enrollment_id);
+
+                //  Clear fields after submission
+                textField.setText("");
+                sidtextField.setText("");
+                cidtextField.setText("");
+                grtextField.setText("");
             }
         });
 
@@ -76,6 +81,7 @@ public class en_roll_ment extends JFrame {
             if (rowsInserted > 0) {
                 JOptionPane.showMessageDialog(null, "Enrolled Successfully!");
             }
+
 
         } catch (SQLException ex) {
             ex.printStackTrace();
