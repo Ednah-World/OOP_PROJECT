@@ -95,6 +95,11 @@ class Final_Instructors  {
                 String course = courseField.getText();
                 String email = emailField.getText();
                 insertInstructorData(id, name, course, email);
+
+                idField.setText("");
+                nameField.setText("");
+                courseField.setText("");
+                emailField.setText("");
             }
         });
 

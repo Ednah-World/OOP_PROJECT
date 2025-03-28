@@ -43,6 +43,12 @@ public class Mainframe extends JFrame {
 
                 insertIntoCourses(courseID, courseName, credits, instructor);
                 JOptionPane.showMessageDialog(null, "Course Added: " + courseName);
+
+                //  Clear fields after submission
+                courseIDField.setText("");
+                courseNameField.setText("");
+                creditsField.setText("");
+                instructorField.setText("");
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Invalid input for credits!", "Error", JOptionPane.ERROR_MESSAGE);
             }
