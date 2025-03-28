@@ -86,7 +86,7 @@ public class Registration_Form extends JDialog{
         User user = null;
         final String DB_URL = "jdbc:postgresql://localhost/test";
         final String USERNAME = "postgres";
-        final String PASSWORD = "";
+        final String PASSWORD = "100100";
 
         try{
             Connection conn = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);

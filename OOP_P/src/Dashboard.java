@@ -28,6 +28,7 @@ public class Dashboard extends JFrame {
         JButton viewInstructorsButton = new JButton("View Instructors");
         JButton add_InstructorsButton = new JButton("Add Instructors");
         JButton addStudentsButton = new JButton("Add Students");
+        JButton addCoursesButton = new JButton("Add Courses");
 
 
 
@@ -37,6 +38,7 @@ public class Dashboard extends JFrame {
         viewInstructorsButton.addActionListener(e -> displayInstructors());
         add_InstructorsButton.addActionListener(e -> displayFinal_instructors());
         addStudentsButton.addActionListener(e -> displayMyStudents());
+        addCoursesButton.addActionListener(e -> displayMyCourses());
 
 
 
@@ -45,6 +47,7 @@ public class Dashboard extends JFrame {
         styleButton(viewInstructorsButton);
         styleButton(add_InstructorsButton);
         styleButton(addStudentsButton);
+        styleButton(addCoursesButton);
 
 
 
@@ -59,6 +62,8 @@ public class Dashboard extends JFrame {
         panel.add(add_InstructorsButton);
         panel.add(Box.createRigidArea(new Dimension(0, 50)));
         panel.add(addStudentsButton);
+        panel.add(Box.createRigidArea(new Dimension(0, 50)));
+        panel.add(addCoursesButton);
         panel.add(Box.createRigidArea(new Dimension(0, 50)));
 
 
@@ -94,9 +99,9 @@ public class Dashboard extends JFrame {
     private void displayCourses() {
         StringBuilder courses = new StringBuilder("Courses:\n");
         try (Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * FROM course")) {
+             ResultSet rs = stmt.executeQuery("SELECT * FROM courses")) {
             while (rs.next()) {
-                courses.append(rs.getString("courseid")).append("\n");
+                courses.append(rs.getString("course_id")).append("\n");
                 courses.append(rs.getString("course_name")).append("\n");
                 courses.append(rs.getString("credits")).append("\n");
                 courses.append(rs.getString("instructor")).append("\n\n");
@@ -114,10 +119,11 @@ public class Dashboard extends JFrame {
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM student")) {
             while (rs.next()) {
-                students.append(rs.getString("id")).append("\n");
-                students.append(rs.getString("name")).append("\n");
-                students.append(rs.getString("phone")).append("\n");
-                students.append(rs.getString("email")).append("\n\n");
+                students.append(rs.getString("student_id")).append("\n");
+                students.append(rs.getString("student_name")).append("\n");
+                students.append(rs.getString("email")).append("\n");
+                students.append(rs.getInt("phone_number")).append("\n\n");
+                students.append(rs.getString("password")).append("\n\n");
                 // Adjust based on your table structure
             }
         } catch (SQLException e) {
@@ -130,7 +136,7 @@ public class Dashboard extends JFrame {
     private void displayInstructors() {
         StringBuilder instructors = new StringBuilder("Instructors:\n");
         try (Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * FROM instructor")) {
+             ResultSet rs = stmt.executeQuery("SELECT * FROM Instructors")) {
             while (rs.next()) {
                 instructors.append(rs.getString("id")).append("\n");
                 instructors.append(rs.getString("name")).append("\n");
@@ -145,29 +151,45 @@ public class Dashboard extends JFrame {
     }
 
 
-private void displayFinal_instructors() {
+    private void displayFinal_instructors() {
 
-    SwingUtilities.invokeLater(() -> new Dashboard());
-    JFrame frame = new JFrame("My Frame");
-    JButton add_instructors = new JButton("Add Instructors");
+        SwingUtilities.invokeLater(() -> new Dashboard());
+        JFrame frame = new JFrame("My Frame");
+        JButton add_instructors = new JButton("Add Instructors");
 
-    add_instructors.addActionListener(e ->displayFinal_instructors());
+        add_instructors.addActionListener(e ->displayFinal_instructors());
 
-    Final_Instructors.createandshowGUI();
-    frame.dispose();
+        Final_Instructors.createandshowGUI();
+        frame.dispose();
+    }
+    private void displayMyCourses() {
+
+        SwingUtilities.invokeLater(() -> new Dashboard());
+        JFrame frame = new JFrame("My Frame");
+        JButton add_courses = new JButton("Add Courses");
+
+        add_courses.addActionListener(e ->displayMyCourses());
+
+        Mainframe myFrame = new Mainframe();
+        frame.dispose();
+    }
 
 
 
-}
+    private void displayMyStudents(){
+        SwingUtilities.invokeLater(() -> new Dashboard());
+        JFrame frame = new JFrame("My Frame");
+        JButton add_students = new JButton("Add Students");
+
+        add_students.addActionListener(e ->displayMyStudents());
+
+        Registration_Form myform = new Registration_Form(null);
+        frame.dispose();
 
 
 
-private void displayMyStudents(){
 
-
-
-
-}
+    }
 
 
     // Method to style buttons
@@ -188,7 +210,7 @@ private void displayMyStudents(){
         public CustomPanel() {
             // Load the badge image
             try {
-                badgeImage = ImageIO.read(new File("src/school_badge.jpg")); // Update with your image path
+                badgeImage = ImageIO.read(new File("src/barca.jpg")); // Update with your image path
             } catch (IOException e) {
                 e.printStackTrace();
             }

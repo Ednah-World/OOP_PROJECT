@@ -47,12 +47,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Scanner scanner= new Scanner(System.in);
-        System.out.print("Please enter course name: ");
-        String course_name= scanner.nextLine();
 
-        Mainframe myFrame = new Mainframe();
-        myFrame.init();
 
     }
 }
