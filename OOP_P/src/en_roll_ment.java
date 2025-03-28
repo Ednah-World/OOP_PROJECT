@@ -51,6 +51,15 @@ public class en_roll_ment extends JFrame {
                 String grade = grtextField.getText();
                 JOptionPane.showMessageDialog(null, "Course Added: " + enrollment_id);
 
+                if (enrollment_id.isEmpty() || student_id.isEmpty() || course_id.isEmpty() || grade.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "All fields are required!");
+                    return;
+                }
+
+                if (insertIntoEnrollment(enrollment_id, student_id, course_id, grade)) {
+                    JOptionPane.showMessageDialog(null, "Course Added Successfully!");
+                }
+
                 //  Clear fields after submission
                 textField.setText("");
                 sidtextField.setText("");
@@ -62,12 +71,12 @@ public class en_roll_ment extends JFrame {
         setVisible(true);
     }
 
-    private void insertIntoEnrollment(String enrollment_id,String student_id, String course_id, String grade) {
-        String url = "jdbc:mysql://localhost:5432/OOP_Projct"; // Change to your database
-        String user = "postgres"; // Change to your MySQL username
-        String password = "Wanjiru1806"; // Change to your MySQL password
+    private boolean insertIntoEnrollment(String enrollment_id, String student_id, String course_id, String grade) {
+        String url = "jdbc:postgresql://localhost:5432/test"; // Change to your database
+        String user = "postgres"; // Change to your  username
+        String password = "100100"; // Change to your password
 
-        String query = "INSERT INTO Enrollment (enrollment_id, student_id, course_id, grade) VALUES (?,?,?,?)";
+        String query = "INSERT INTO Enrollments (enrollment_id, student_id, course_id, grade) VALUES (?,?,?,?)";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -87,6 +96,7 @@ public class en_roll_ment extends JFrame {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
         }
+        return false;
     }
 
     public static void main(String[] args) {

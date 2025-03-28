@@ -9,7 +9,7 @@ import java.sql.*;
                 setTitle("Add Course");
                 setSize(500, 450);
                 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                setLayout(new FlowLayout());// Set layout for components
+                setLayout(new GridLayout(5, 2, 5, 5));// Set layout for components
                 Course course= new Course();
 
                 // Creating UI Components
@@ -48,16 +48,32 @@ import java.sql.*;
                         String credits = crtextField.getText();
                         String instructor = insttextField.getText();
                         JOptionPane.showMessageDialog(null, "Course Added: " + course_name);
+
+                        if (course_id.isEmpty() || course_name.isEmpty() || credits.isEmpty() || instructor.isEmpty()) {
+                            JOptionPane.showMessageDialog(null, "All fields are required!");
+                            return;
+                        }
+
+                        if (insertIntoCourses(course_id, course_name, credits, instructor)) {
+                            JOptionPane.showMessageDialog(null, "Course Added Successfully!");
+                        }
+
+                        //  Clear fields after submission
+                        idtextField.setText("");
+                        textField.setText("");
+                        crtextField.setText("");
+                        insttextField.setText("");
                     }
+
                 });
 
                 setVisible(true);
             }
 
-            private void insertIntoCourses(String course_id,String course_name, String credits, String instructor) {
-                String url = "jdbc:mysql://localhost:5432/OOP_Projct"; // Change to your database
-                String user = "postgres"; // Change to your MySQL username
-                String password = "Wanjiru1806"; // Change to your MySQL password
+            private boolean insertIntoCourses(String course_id,String course_name, String credits, String instructor) {
+                String url = "jdbc:postgresql://localhost:5432/test"; // Change to your database
+                String user = "postgres"; // Change to your username
+                String password = "100100"; // Change to your password
 
                 String query = "INSERT INTO Courses (course_name, course_id, credits, instructor) VALUES (?,?,?,?)";
 
@@ -78,7 +94,7 @@ import java.sql.*;
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
-            }
+            return false;}
 
             public static void main(String[] args) {
                 Mainframe myFrame = new Mainframe();

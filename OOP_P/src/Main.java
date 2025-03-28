@@ -9,10 +9,10 @@ public class Main {
         Scanner sc= new Scanner(System.in);
         Statement state;
         connectdb db= new connectdb();
-        Connection conn=db.conn("OOP_Projct","postgres","Wanjiru1806");
+        Connection conn=db.conn("test","postgres","100100");
 
         try {
-            String query = "insert into courses (course_id, course_name, credits, instructor) values ('001', 'BComm', '4','Prof. Wafula')";
+            String query = "insert into courses (course_id, course_name, credits, instructor) values ('001', 'BComm', '4','I009')";
             state= conn.createStatement();
             state.executeUpdate(query);
             System.out.println("Value inserted successfully");
@@ -21,7 +21,7 @@ public class Main {
         }
 
         try {
-            String query= "insert into Student (student_id, student_name, email, phone_number, password) values ('5001', 'Bing Bong', 'boing@gmail.com','0771209193','chinkololo%')";
+            String query= "insert into Student (student_id, student_name, email) values ('5001', 'Bing Bong', 'boing@gmail.com')";
             state= conn.createStatement();
             state.executeUpdate(query);
             System.out.println("Value inserted successfully");

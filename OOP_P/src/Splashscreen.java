@@ -8,23 +8,29 @@ public class Splashscreen {
         window = new JWindow();
 
         // Splash screen size
-        window.setSize(400, 300);
+        window.setSize(400, 405);
         window.setLocationRelativeTo(null);
 
         // Create a panel with a background color
         JPanel panel = new JPanel();
-        panel.setBackground(Color.BLACK);
+        panel.setBackground(Color.GRAY);
         panel.setLayout(new BorderLayout());
+
+        // Add a school message
+        JLabel schoolLabel = new JLabel("Bolderline School", SwingConstants.CENTER);
+        schoolLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        panel.add(schoolLabel, BorderLayout.NORTH);
 
         // Add an image
         ImageIcon splashIcon = new ImageIcon(getClass().getResource("bolderline.jpeg"));
         JLabel label = new JLabel(splashIcon);
         panel.add(label, BorderLayout.CENTER);
 
-        // Add a loading message
-        JLabel loadingLabel = new JLabel("Bolderline School", SwingConstants.CENTER);
-        loadingLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel loadingLabel = new JLabel("Loading...", SwingConstants.CENTER);
+        loadingLabel.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(loadingLabel, BorderLayout.SOUTH);
+
+
 
         window.add(panel);
     }

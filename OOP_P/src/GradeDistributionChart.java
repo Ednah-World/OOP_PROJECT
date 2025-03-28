@@ -45,7 +45,7 @@ public class GradeDistributionChart extends JFrame{
         JFreeChart chart = ChartFactory.createPieChart(
                 "Grade Distribution", dataset, true, true, false);
         PiePlot plot = (PiePlot) chart.getPlot();
-        plot.setBackgroundPaint(Color.white);
+        plot.setBackgroundPaint(Color.GRAY);
         return chart;
     }
 

@@ -23,8 +23,7 @@ public class Registration_Form extends JDialog{
         setTitle("Register new students");
         setContentPane(RegisterPanel);
         setMinimumSize(new Dimension(600,500));
-//        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-//        gd.setFullScreenWindow(this);
+
         setModal(true);
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
