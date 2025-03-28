@@ -6,7 +6,6 @@ public class Student extends Person{
     private String email;
     private int student_id;
     private int PhoneNumber;
-    private String password;
 
     public Student(String name, String email, String student_id, int PhoneNumber){
         super();
@@ -28,7 +27,7 @@ public class Student extends Person{
 
     // Method to insert a student into the database
     public void saveToDatabase() {
-        String query = "INSERT INTO students (name, email, id, phone number, password) VALUES (?, ?, ?, ?,?)";
+        String query = "INSERT INTO students (name, email, id, phone number) VALUES (?, ?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -36,7 +35,6 @@ public class Student extends Person{
             stmt.setString(2, getEmail());
             stmt.setString(3, String.valueOf(getStudentId()));
             stmt.setString(4, getPhoneNumber());
-            stmt.setString(5, getpassword());
 
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
@@ -52,10 +50,6 @@ public class Student extends Person{
 
     private String getName() {
         return name;
-    }
-
-    private int getpassword() {
-        return password;
     }
 
     private String getPhoneNumber() {
@@ -79,7 +73,6 @@ public class Student extends Person{
                 String name = rs.getString("name");
                 String email = rs.getString("email");
                 String PhoneNumber = rs.getString("Phone Number");
-                String password = rs.getString("password");
                 return new Student(name, email, PhoneNumber, password,studentId );
             } else {
                 System.out.println("Student not found.");
@@ -92,7 +85,7 @@ public class Student extends Person{
     }
 
     // Method to update student details
-    public void updateStudent(String newName, String newEmail, int newPhoneNumber, String newpassword) {
+    public void updateStudent(String newName, String newEmail, int newPhoneNumber) {
         String query = "UPDATE students SET name = ?, email = ?, Phone Number = ?, password = ?, WHERE student_id = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -100,7 +93,6 @@ public class Student extends Person{
             stmt.setString(1, newName);
             stmt.setString(2, newEmail);
             stmt.setString(3, String.valueOf(newPhoneNumber));
-            stmt.setString(4, newpassword);
             stmt.setInt(5, student_id);
 
             int rowsUpdated = stmt.executeUpdate();
