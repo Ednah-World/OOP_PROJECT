@@ -78,9 +78,9 @@ public class Dashboard extends JFrame {
 
     private void connectToDatabase() {
         try {
-            String DB_URL = "jdbc:postgresql://localhost:5432/test"; // Update with your database URL
+            String DB_URL = "jdbc:postgresql://localhost:5432/PlungerSchool"; // Update with your database URL
             String USER = "postgres"; // Update with your database username
-            String PASSWORD = "100100"; // Update with your database password
+            String PASSWORD = "Godisawesome@21"; // Update with your database password
             connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
             System.out.println("Connected to the database successfully!");
         } catch (SQLException e) {
@@ -145,29 +145,29 @@ public class Dashboard extends JFrame {
     }
 
 
-private void displayFinal_instructors() {
+    private void displayFinal_instructors() {
 
-    SwingUtilities.invokeLater(() -> new Dashboard());
-    JFrame frame = new JFrame("My Frame");
-    JButton add_instructors = new JButton("Add Instructors");
+        SwingUtilities.invokeLater(() -> new Dashboard());
+        JFrame frame = new JFrame("My Frame");
+        JButton add_instructors = new JButton("Add Instructors");
 
-    add_instructors.addActionListener(e ->displayFinal_instructors());
+        add_instructors.addActionListener(e ->displayFinal_instructors());
 
-    Final_Instructors.createandshowGUI();
-    frame.dispose();
-
-
-
-}
+        Final_Instructors.createandshowGUI();
+        frame.dispose();
 
 
 
-private void displayMyStudents(){
+    }
+
+
+
+    private void displayMyStudents(){
 
 
 
 
-}
+    }
 
 
     // Method to style buttons
