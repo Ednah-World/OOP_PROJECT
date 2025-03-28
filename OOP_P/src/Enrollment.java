@@ -13,6 +13,7 @@ public class Enrollment extends JFrame {
     protected JPanel EnrollmentPanel;
 
     public Enrollment() {
+
         setContentPane(EnrollmentPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 600);
