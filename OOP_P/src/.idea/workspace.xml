@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6f332401-6af6-4224-993d-c19e077c8329" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/Registration_Form.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/Registration_Form.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/enroll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/_BACKUP_1074.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/_BASE_1074.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/_LOCAL_1074.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/_REMOTE_1074.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseAnalytics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enrollment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mainframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Mainframe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP_P.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_P.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseAnalytics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseForm$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseForm$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseRegistration$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseRegistration$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/CourseRegistration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/course1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/OOP_PROJECT/course2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,22 +33,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2uugrNzBhxWHaUCK9itww5qkqjX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/natas/OneDrive/Desktop/OOP_PROJECT/OOP_P/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.StudentForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.en_roll_ment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ednah/Downloads/OOP_Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Application.en_roll_ment" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,5 +68,16 @@
       <updated>1743104070458</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/StudentForm.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
