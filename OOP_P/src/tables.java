@@ -31,30 +31,6 @@ public class tables {
             e.printStackTrace();
         }
         try {
-            String query = "Create table Staff (staff_id VARCHAR(20) primary key, department VARCHAR(20))";
-            state = conn.createStatement();
-            state.executeUpdate(query);
-            System.out.println("Finished");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            String query = "Create table Attendance (student_id VARCHAR(20), hours VARCHAR(20))";
-            state = conn.createStatement();
-            state.executeUpdate(query);
-            System.out.println("Finished");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            String query = "Create table Fees (student_id VARCHAR(20), credit VARCHAR(20), debit VARCHAR(20))";
-            state = conn.createStatement();
-            state.executeUpdate(query);
-            System.out.println("Finished");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
             String query = "Create table Registration (name VARCHAR(20) primary key, email VARCHAR(20), phone VARCHAR(20), address VARCHAR(20), password VARCHAR(20))";
             state = conn.createStatement();
             state.executeUpdate(query);

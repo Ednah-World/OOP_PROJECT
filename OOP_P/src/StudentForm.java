@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
             setTitle("Add Student");
             setSize(500, 450);
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            setLayout(new FlowLayout());
+            setLayout(new GridLayout(5, 2, 5, 5));// Set layout for components
 
             // Creating UI Components
             JLabel nameLabel = new JLabel("Name:");
@@ -18,8 +18,9 @@ import java.awt.event.ActionListener;
             JLabel emailLabel = new JLabel("Email:");
             JTextField emailTextField = new JTextField(20);
 
-            JLabel pnLabel = new JLabel("Phone Number:");
-            JTextField pnTextField = new JTextField(20);
+            JLabel siLabel = new JLabel("Student Number:");
+            JTextField siField = new JTextField(20);
+
 
 
             JButton submitButton = new JButton("Submit");
@@ -29,8 +30,8 @@ import java.awt.event.ActionListener;
             add(nameTextField);
             add(emailLabel);
             add(emailTextField);
-            add(pnLabel);
-            add(pnTextField);
+            add(siLabel);
+            add(siField);
             add(submitButton);
 
             // Action Listener for Submit Button
@@ -39,16 +40,15 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent e) {
                     String name = nameTextField.getText();
                     String email = emailTextField.getText();
-                    String PhoneNumber = pnTextField.getText();
+                    String student_id = siField.getText();
 
-                    if (name.isEmpty() || email.isEmpty() || PhoneNumber.isEmpty()) {
+                    if (name.isEmpty() || email.isEmpty() ||  student_id.isEmpty())  {
                         JOptionPane.showMessageDialog(null, "All fields must be filled!", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
                     }
 
                     // Create Student Object
-                    Student student;
-                    student = new Student(name, email, PhoneNumber);
+                    Student student = new Student(name,email,student_id);
 
                     // Save student to database
                     student.saveToDatabase();

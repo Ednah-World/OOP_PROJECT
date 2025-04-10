@@ -44,7 +44,7 @@ public class CourseEnrollmentChart extends JFrame {
 
     private DefaultCategoryDataset fetchEnrollmentData() {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        String url = "jdbc:postgresql://localhost:5432/test"; // Change your DB details
+        String url = "jdbc:postgresql://localhost:5432/test"; // your DB details
         String user = "postgres";
         String password = "100100";
 

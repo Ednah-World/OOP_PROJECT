@@ -4,9 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
+<<<<<<< .merge_file_aeqkxA
 public class Mainframe extends JFrame {
     private JTextField courseIDField, courseNameField, creditsField, instructorField;
     private AbstractButton button;
+=======
+        public class Mainframe extends JFrame {
+            public void init() {
+                setTitle("Add Course");
+                setSize(500, 450);
+                setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                setLayout(new GridLayout(5, 2, 5, 5));// Set layout for components
+                Course course= new Course();
+>>>>>>> .merge_file_4spnIL
 
     public void init() {
         setTitle("Add Course");
@@ -52,7 +62,23 @@ public class Mainframe extends JFrame {
                         String credits = creditsField.getText();
                         String instructor = instructorField.getText();
                         JOptionPane.showMessageDialog(null, "Course Added: " + course_name);
+
+                        if (course_id.isEmpty() || course_name.isEmpty() || credits.isEmpty() || instructor.isEmpty()) {
+                            JOptionPane.showMessageDialog(null, "All fields are required!");
+                            return;
+                        }
+
+                        if (insertIntoCourses(course_id, course_name, credits, instructor)) {
+                            JOptionPane.showMessageDialog(null, "Course Added Successfully!");
+                        }
+
+                        //  Clear fields after submission
+                        idtextField.setText("");
+                        textField.setText("");
+                        crtextField.setText("");
+                        insttextField.setText("");
                     }
+
                 });
 
                 insertIntoCourses(courseID, courseName, credits, instructor);
@@ -93,10 +119,10 @@ public class Mainframe extends JFrame {
             }
 
 
-            private void insertIntoCourses(String course_id,String course_name, String credits, String instructor) {
-                String url = "jdbc:mysql://localhost:5432/OOP_Projct"; // Change to your database
-                String user = "postgres"; // Change to your MySQL username
-                String password = "Wanjiru1806"; // Change to your MySQL password
+            private boolean insertIntoCourses(String course_id,String course_name, String credits, String instructor) {
+                String url = "jdbc:postgresql://localhost:5432/test"; // Change to your database
+                String user = "postgres"; // Change to your username
+                String password = "100100"; // Change to your password
 
                 String query = "INSERT INTO Courses (course_name, course_id, credits, instructor) VALUES (?,?,?,?)";
 
@@ -117,7 +143,7 @@ public class Mainframe extends JFrame {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
                 }
-            }
+            return false;}
 
             public static void main(String[] args) {
                 Mainframe myFrame = new Mainframe();
