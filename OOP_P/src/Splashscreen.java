@@ -1,28 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 public class Splashscreen {
-    private JWindow window;
+    private final JWindow window;
 
     public Splashscreen() {
         window = new JWindow();
 
         // Splash screen size
-        window.setSize(400, 405);
+        window.setSize(700, 700);
         window.setLocationRelativeTo(null);
 
         // Create a panel with a background color
         JPanel panel = new JPanel();
-        panel.setBackground(Color.GRAY);
+        panel.setBackground(Color.BLACK);
         panel.setLayout(new BorderLayout());
 
-        // Add a school message
-        JLabel schoolLabel = new JLabel("Bolderline School", SwingConstants.CENTER);
-        schoolLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        panel.add(schoolLabel, BorderLayout.NORTH);
-
         // Add an image
-        ImageIcon splashIcon = new ImageIcon(getClass().getResource("bolderline.jpeg"));
+        ImageIcon splashIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("bolderline logo.png")));
         JLabel label = new JLabel(splashIcon);
         panel.add(label, BorderLayout.CENTER);
 
